@@ -7,11 +7,17 @@ const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
 const sortAlphaButton = document.getElementById('sort-alpha');
 const sortMostPlayedButton = document.getElementById('sort-most-played');
+const albumCover = document.getElementById('album-cover');
+const songNameElement = document.getElementById('song-name');
 
 let songs = [];
 let currentSongIndex = 0;
 let isPlaying = false;
+let audio = null;
 let playCount = {};
+
+// Default cover image
+const defaultCover = 'default-cover.jpg';
 
 // Handle file selection
 fileInput.addEventListener('change', function(event) {
@@ -19,7 +25,8 @@ fileInput.addEventListener('change', function(event) {
     songs = Array.from(files).map(file => ({
         name: file.name,
         file: file,
-        timesPlayed: 0
+        timesPlayed: 0,
+        cover: defaultCover // Assign default cover if none exists
     }));
     displaySongList();
 });
@@ -38,10 +45,24 @@ function displaySongList() {
 // Load the selected song
 function loadSong(index) {
     currentSongIndex = index;
-    const audio = new Audio(URL.createObjectURL(songs[index].file));
+
+    // Stop the current audio if any
+    if (audio) {
+        audio.pause();
+    }
+
+    // Load new song
+    const song = songs[index];
+    audio = new Audio(URL.createObjectURL(song.file));
     audio.addEventListener('ended', nextSong);
+
+    // Update song details
+    songNameElement.textContent = song.name;
+    albumCover.src = song.cover; // Use default cover if none exists
+    playCount[song.name] = (playCount[song.name] || 0) + 1;
+
+    // Start playing
     audio.play();
-    playCount[songs[index].name] = (playCount[songs[index].name] || 0) + 1;
     isPlaying = true;
     updatePlayPauseButton();
 }
