@@ -12,15 +12,19 @@
             <img src="default-cover.jpg" alt="Album Art" id="album-cover" class="album-cover">
         </div>
         <div class="details">
-            <p id="song-name">Select a song...</p>
+            <p id="song-name">No song playing...</p>
+        </div>
+        <div class="seekbar-container">
+            <input type="range" id="seekbar" value="0" max="100">
         </div>
         <div class="controls">
             <button id="prev">⏮️</button>
             <button id="play-pause">▶️</button>
             <button id="next">⏭️</button>
         </div>
+        <button id="fetch-songs">Fetch Songs from Device</button>
+        <input type="file" id="file-input" accept=".mp3" multiple style="display: none;">
         <div class="song-list-container">
-            <input type="file" id="file-input" accept=".mp3" multiple>
             <ul id="song-list"></ul>
         </div>
         <button id="sort-alpha">Sort A-Z</button>
