@@ -74,3 +74,29 @@ button {
     width: 100%;
     max-width: 300px;
 }
+
+
+/* Add styles for seekbar and hiding file input after fetching songs */
+
+.seekbar-container {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 300px;
+}
+
+#seekbar {
+    width: 100%;
+}
+
+#file-input {
+    display: none; /* Hide the file input after fetching */
+}
+
+.song-list-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 300px;
+}
+
+
+
