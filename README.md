@@ -2,7 +2,7 @@
 
 A **mobile-first responsive music player** built with HTML, CSS, and JavaScript, allowing users to upload and listen to their local MP3 files. This player supports core functionalities like play, pause, next, previous, and sorting songs alphabetically or by most-played tracks.
 
-🎧 **Live Demo**: [mymp3player.netlify.app](https://mymp3player.netlify.app)
+🎧 **Live Demo**: [mymp3player.netlify.app](https://mymp3players.netlify.app)
 
 ## Features
 
