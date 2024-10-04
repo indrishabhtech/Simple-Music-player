@@ -1,5 +1,4 @@
 
-
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -27,6 +26,16 @@ body {
     width: 100%;
     max-width: 100%;
     height: auto;
+}
+
+.details {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#song-name {
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .controls {
